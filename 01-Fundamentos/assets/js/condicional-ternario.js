@@ -22,7 +22,6 @@ let mensaje; //Esta abierto, esta cerrado, hoy abrimos a las XX
 
 
 horaApertura = ( [0,6].includes( dia )) ? 9 : 11;
-
 mensaje = (horaActual >= horaApertura) ?  'Abierto' : `Esta cerrado. Hoy abrimos a las ${horaApertura}`;
 
 // if( horaActual >= horaApertura){
