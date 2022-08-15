@@ -27,7 +27,7 @@ let esther = {...fran};
 esther.nombre = 'Esther';
 console.log({ fran, esther});
 
-//Lo mismo ocurre si utilizamos la funcion de cambiar nombre. El parametro lo marcamos como un objeto {} y a;adimos el operador spreed
+//Lo mismo ocurre si utilizamos la funcion de cambiar nombre. El parametro lo marcamos como un objeto {} y a;adimos el operador spread
 const cambiarNombre2 = ({ ...persona }) =>{
     persona.nombre = 'Tony';
     return persona;
