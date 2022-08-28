@@ -77,6 +77,7 @@ const miModulo = (()=>{
         return puntosJugadores[turno];
     }
 
+    //Muestra una nueva carta
     const mostrarNuevaCarta = ( carta, turno ) =>{
         const imgCarta = document.createElement('img');
         imgCarta.src=`assets/cartas/${ carta }.png`;
@@ -85,10 +86,9 @@ const miModulo = (()=>{
     }
 
 
+    //Determina que jugador ha ganado
     const determinarGanador = ()=>{
-
         const [puntosMinimos, puntosComputadora] = puntosJugadores;
-
         setTimeout(() => {
             if(puntosComputadora === puntosMinimos){
                 alert('Nadie gana! :(');
@@ -116,7 +116,8 @@ const miModulo = (()=>{
         determinarGanador();
     }
 
-    //Eventos
+    //-------------------- Eventos ---------------------------------------------------
+    
     btnPedir.addEventListener('click', () => {
         const carta = pedirCarta();
         const puntosJugador = acumularPuntos(carta, 0);
