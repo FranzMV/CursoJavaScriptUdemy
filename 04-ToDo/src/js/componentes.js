@@ -5,6 +5,7 @@ import { todoList } from "../index";
 //Referencias en el HTML
 const divTodoList = document.querySelector('.todo-list'); 
 const txtInput = document.querySelector('.new-todo');
+const btnBorrarCompletados = document.querySelector('.clear-completed');
 
 //Metodo para crear en el html un nuevo todo
 export const creatTodoHtml = (todo) =>{
@@ -43,9 +44,21 @@ divTodoList.addEventListener('click', (event) =>{
     if(nombreElemento.includes('input')){
         todoList.marcarCompletado(todId);
         todoElemento.classList.toggle('completed');
-        
+
     }else if(nombreElemento.includes('button')){
         todoList.eliminarTodo ( todId );
         divTodoList.removeChild( todoElemento );
     }
 });
+
+btnBorrarCompletados.addEventListener('click', () =>{
+    todoList.eliminarCompletado();
+    
+    for(let i = divTodoList.children.length -1; i>=0; i--){
+        const elemento = divTodoList.children[i];
+
+        if(elemento.classList.contains('completed')){
+            divTodoList.removeChild(elemento);
+        }
+    }
+})
