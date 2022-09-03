@@ -7,3 +7,5 @@ import './styles.css';
 export const todoList = new TodoList();
 
 todoList.todos.forEach(todo => creatTodoHtml(todo) );
+
+todoList.todos[0].imprimirClase();
