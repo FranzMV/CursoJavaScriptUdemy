@@ -1,15 +1,16 @@
-import { buscarHeroeAsync } from "./promesas";
+import { buscarHeroeAsync, buscarHeroe } from "./promesas";
 
 const heroesId =['capi','iron','spider'];
 
 export const obtenerHeroesArr = async() =>{
-    const heroesArr = [];
+    // const heroesArr = [];
 
-    for(const id of heroesId){
-        const heroe = await buscarHeroeAsync(id); //Cuando se resuelve esta promesa se guarda en la constante heroe
-        heroesArr.push(heroe);
-    }
+    // for(const id of heroesId){
+    //     heroesArr.push(buscarHeroe(id)); 
+      
+    // }
     
+    // return await Promise.all( heroesArr );
 
-    return heroesArr;
+    return await Promise.all(heroesId.map( buscarHeroe));
 }

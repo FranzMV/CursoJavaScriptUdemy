@@ -24,4 +24,8 @@ import { obtenerHeroesArr } from './js/await';
 //const heroes = obtenerHeroesArr();
 //console.log({heroes});
 
-obtenerHeroesArr().then(console.log);
+console.time('await');
+obtenerHeroesArr().then(heroes =>{
+    console.table(heroes);
+    console.timeEnd('await');
+});
