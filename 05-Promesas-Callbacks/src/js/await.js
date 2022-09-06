@@ -13,4 +13,18 @@ export const obtenerHeroesArr = async() =>{
     // return await Promise.all( heroesArr );
 
     return await Promise.all(heroesId.map( buscarHeroe));
+};
+
+export const obtenerHeroeAwait = async (id) =>{
+
+    try {
+        const heroe = await buscarHeroeAsync( id );
+        return heroe;
+    } catch (err) {
+        console.log('Catch!!!');
+        return{
+            nombre: 'Sin nombre',
+            poder: 'Sin poder'
+        };
+    }
 }
