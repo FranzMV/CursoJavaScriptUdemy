@@ -1,4 +1,5 @@
 import {buscarHeroe, buscarHeroeAsync} from './js/promesas';
+import { obtenerHeroesArr } from './js/await';
 
 
 // promesaLenta.then(console.log);
@@ -11,11 +12,16 @@ import {buscarHeroe, buscarHeroeAsync} from './js/promesas';
 //     .then(console.log)//Se ejecutara la mas rapida
 //     .catch( console.warn );
 
-//Llamada a la funciono no asincrona
-buscarHeroe('capi')
-    .then(heroe => console.log(heroe))
-    .catch(console.warn);
+//Llamada a la funcion no asincrona
+// buscarHeroe('capi')
+//     .then(heroe => console.log(heroe))
+//     .catch(console.warn);
 
-buscarHeroeAsync('iron')
-    .then(heroe => console.log(heroe))
-    .catch(console.warn);
+// buscarHeroeAsync('iron')
+//     .then(heroe => console.log(heroe))
+//     .catch(console.warn);
+
+//const heroes = obtenerHeroesArr();
+//console.log({heroes});
+
+obtenerHeroesArr().then(console.log);
