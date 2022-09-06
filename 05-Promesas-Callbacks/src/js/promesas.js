@@ -27,16 +27,27 @@ export const buscarHeroe = ( id ) => {
     });
 }
 
+//Forma async: Regresa una nueva promesa
+export const buscarHeroeAsync = async( id ) => {
+    const heroe = heroes[id];
+    if(heroe){
+        return heroe;
+    }else{
+        throw Error(`No existe un heroe con el id ${id}`);
+    }
+}
+
+
 const promesaLenta = new Promise( (resolve, reject)=> {
     setTimeout(()=> resolve('Promesa lenta'), 2000);
 });
 
 const promesaMedia = new Promise( (resolve, reject)=> {
-    setTimeout(()=> reject('Promesa media'), 1500);
+    setTimeout(()=> resolve('Promesa media'), 1500);
 });
 
 const promesaRapida = new Promise( (resolve, reject)=> {
-    setTimeout(()=> reject('Promesa rapida'), 1000);
+    setTimeout(()=> resolve('Promesa rapida'), 1000);
 });
 
 export{
