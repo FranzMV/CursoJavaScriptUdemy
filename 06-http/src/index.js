@@ -1,17 +1,22 @@
-import * as CRUD from './js/crud-provider';
+//import * as CRUD from './js/crud-provider';
+import { init } from './js/archivos-page';
 
-CRUD.getUsuario( 2 ).then( console.log );
-
-CRUD.crearUsuario({
-    name: 'Fran',
-    job: 'Carpintero'
-}).then(console.log);
+init();
 
 
-CRUD.actualizarUsuario(1, {
-    name:'Melisa',
-    job: 'Develover'
-}).then(console.log);
+
+// CRUD.getUsuario( 2 ).then( console.log );
+
+// CRUD.crearUsuario({
+//     name: 'Fran',
+//     job: 'Carpintero'
+// }).then(console.log);
 
 
-CRUD.borrarUsuariao(1).then(console.log);
+// CRUD.actualizarUsuario(1, {
+//     name:'Melisa',
+//     job: 'Develover'
+// }).then(console.log);
+
+
+// CRUD.borrarUsuariao(1).then(console.log);
